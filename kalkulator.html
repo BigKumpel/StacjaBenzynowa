@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja Benzynowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Stacja Benzynowa</h1>
+    </div>
+    <div class="mid">
+        <h2>Oblicz koszt paliwa</h2>
+        <h3 >Wybierz rodzaj paliwa</h3>
+    </div>
+    <div class="mid">
+        <input type="radio" id="a" name="wybór" value="l">
+        <label>Benzyna - 6,70zł za litr</label>
+        <input type="radio" id="b"  name="wybór" value="l">
+        <label>Ropa - 7,50zł za litr</label>
+    </div>
+    <div class="mid">
+        <p>Ile litrów</p>
+        <input type="number" id="l">
+        <button  id="g" onclick="obliczenia()">Policz</button>
+        <p>Do zapłacenia:</p>
+        <p id="cena"></p>
+    </div>
+    <script>
+        function obliczenia() {
+            var l = document.getElementById("l").value;
+            let a = document.getElementById("a");
+            let b = document.getElementById("b");
+            if (a.checked === true) {
+                let cena = l * 6.70;
+                document.getElementById("cena").innerHTML = cena + "zł";
+            }
+            else if (b.checked === true) {
+                let cena = l * 7.50;
+                document.getElementById("cena").innerHTML = cena +"zł";
+        }
+        }
+    </script>;
+</body>
+</html>
